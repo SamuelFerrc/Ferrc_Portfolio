@@ -1,24 +1,23 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Samuel",
+  lastName: "Ferreira",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Developer and Programmer",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "America/Sao_Paulo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Portuguese", "French", "Chinese"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      I make some codes, and if I am feeling good I gonna make a world.
     </>
   ),
 };
@@ -29,22 +28,17 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/SamuelLindao",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-  },
-  {
-    name: "X",
-    icon: "x",
-    link: "",
+    link: "https://www.linkedin.com/in/samuelrxz/",
   },
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "lacerdasamuel26@gmail.com",
   },
 ];
 
@@ -52,11 +46,11 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Developer and Programmer</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Samuel, a developer and programmer from <InlineCode>BRAZIL</InlineCode>, with large experience in game and software development
+      <br /> you will see everything about this on this website!
     </>
   ),
 };
@@ -73,7 +67,7 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -81,9 +75,9 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Samuel is a developer and programmer with a passion for and involvement in the scientific world.
+        Through processes of significance and logical understanding, he seeks to understand the world in his own way.
+        His programming skills allow him to understand the world and also model it.
       </>
     ),
   },
@@ -138,13 +132,10 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "State University of Santa Cruz",
+        description: <>Computer Science.</>,
       },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
-      },
+
     ],
   },
   technical: {
@@ -152,37 +143,58 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        title: "C#",
+        description: <></>,
         // optional: leave the array empty if you don't want to display images
         images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+
         ],
+
+      },
+      {
+        title: "C++",
+        description: <></>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+
+        ],
+
+      },
+      {
+        title: "Python",
+        description: <></>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+
+        ],
+
+      },
+      {
+        title: "Java",
+        description: <></>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+
+        ],
+
+      },
+      {
+        title: "Flutter",
+        description: <></>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+
+        ],
+
       },
       {
         title: "Next.js",
         description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+
+
       },
+
     ],
   },
 };

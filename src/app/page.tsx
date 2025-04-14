@@ -6,7 +6,6 @@ import { Projects } from "@/components/work/Projects";
 import { baseURL, routes } from "@/app/resources";
 import { home, about, person, newsletter } from "@/app/resources/content";
 import { Mailchimp } from "@/components";
-import { Posts } from "@/components/blog/Posts";
 
 export async function generateMetadata() {
   const title = home.title;
@@ -106,9 +105,6 @@ export default function Home() {
             <Heading as="h2" variant="display-strong-xs" wrap="balance">
               Latest from the blog
             </Heading>
-          </Flex>
-          <Flex flex={3} paddingX="20">
-            <Posts range={[1, 2]} columns="2" />
           </Flex>
         </Flex>
       )}
