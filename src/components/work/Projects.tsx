@@ -30,6 +30,7 @@ export function Projects({ range }: ProjectsProps) {
           content={post.content}
           avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
           link={post.metadata.link || ""}
+          videos={post.metadata.videos}
         />
       ))}
     </Column>
