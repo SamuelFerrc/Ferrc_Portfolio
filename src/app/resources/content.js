@@ -23,8 +23,7 @@ const newsletter = {
 };
 
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
+
   {
     name: "GitHub",
     icon: "github",
@@ -38,7 +37,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "samuel.ferr@ferrc.com",
+    link: "mailto:samuel.ferr@ferrc.com",
   },
 ];
 
@@ -80,48 +79,63 @@ const about = {
         His programming skills allow him to understand the world and also model it.
       </>
     ),
+    images: [],
+
   },
   work: {
     display: true, // set to false to hide this section
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "State University of Santa Cruz (UESC)",
+        timeframe: "2024 - 2025",
+        role: "Scholarship Student Probex",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            At UESC I was able to develop my academic and scientific skills aiming at an improvement
+            in general development. Where through the scientific path it was possible to have a general
+            improvement in life.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
+
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "GTS Path",
+        timeframe: "2024 - 2024",
+        role: "Virtual Reality Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            GTS was where I learned essential Unreal Engine skills and augmented reality development.
+            A challenge that required the development of skills in the adverse areas of analytical
+            geometry, physics and others.
           </>,
+        ],
+        images: [],
+
+      },
+      {
+        company: "Dexioprotocol",
+        timeframe: "2021 - 2023",
+        role: "Unity Developer",
+        achievements: [
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            At Dexi I was able to learn about the crypto universe and develop essential skills for game
+            development in Unity. I'm moving towards general good practices.
           </>,
+        ],
+        images: [],
+
+      },
+      {
+        company: "Enigma Games Inc",
+        timeframe: "2020 - 2020",
+        role: "Unity Developer",
+        achievements: [
+          <>
+            Enigma was where I took my steps into game development.
+          </>,
+
         ],
         images: [],
       },
@@ -189,9 +203,11 @@ const about = {
       },
       {
         title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        description: <></>,
         // optional: leave the array empty if you don't want to display images
+        images: [
 
+        ],
 
       },
 
