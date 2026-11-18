@@ -9,6 +9,12 @@ import {
     SmartLink,
     Text,
 } from "@/once-ui/components";
+import styles from "./ProjectCard.module.scss";
+
+type ProjectLink = {
+    label: string;
+    href: string;
+};
 
 interface ProjectCardProps {
     href: string;
@@ -20,6 +26,13 @@ interface ProjectCardProps {
     avatars: { src: string }[];
     link: string;
     videos?: string[];
+    featured?: boolean;
+    status?: string;
+    links?: ProjectLink[];
+}
+
+function getVideoType(video: string) {
+    return video.toLowerCase().endsWith(".mov") ? "video/quicktime" : "video/mp4";
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -31,10 +44,25 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                                             avatars,
                                                             link,
                                                             videos = [],
+                                                            featured = false,
+                                                            status = "",
+                                                            links = [],
                                                         }) => {
     return (
-        <Column fillWidth gap="m">
-            {/* Carrossel apenas para imagens (como originalmente) */}
+        <Column
+            fillWidth
+            gap="m"
+            className={featured ? styles.featured : undefined}
+            padding={featured ? "12" : undefined}
+            radius={featured ? "l" : undefined}
+        >
+            {(featured || status) && (
+                <Flex gap="8" wrap paddingX="s" vertical="center">
+                    {featured && <span className={styles.featuredBadge}>Featured project</span>}
+                    {status && <span className={styles.statusBadge}>{status}</span>}
+                </Flex>
+            )}
+
             {images.length > 0 && (
                 <Carousel
                     sizes="(max-width: 960px) 100vw, 960px"
@@ -45,20 +73,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 />
             )}
 
-            {/* Seção de vídeos abaixo do carrossel */}
             {videos.length > 0 && (
-                <Column gap="s" paddingX="s">
+                <div className={featured ? styles.featuredVideos : styles.videos}>
                     {videos.map((video, index) => (
                         <video
-                            key={index}
+                            key={video}
                             controls
-                            style={{ width: '100%', borderRadius: '8px' }}
+                            playsInline
+                            preload={featured || index === 0 ? "metadata" : "none"}
+                            className={styles.video}
                         >
-                            <source src={video} type="video/mp4" />
-                            Seu navegador não suporta o elemento de vídeo.
+                            <source src={video} type={getVideoType(video)} />
+                            Your browser does not support embedded video.
                         </video>
                     ))}
-                </Column>
+                </div>
             )}
 
             <Flex
@@ -103,6 +132,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                     <Text variant="body-default-s">View project</Text>
                                 </SmartLink>
                             )}
+                            {links.map((projectLink) => (
+                                <SmartLink
+                                    key={projectLink.href}
+                                    suffixIcon="arrowUpRightFromSquare"
+                                    style={{ margin: "0", width: "fit-content" }}
+                                    href={projectLink.href}
+                                >
+                                    <Text variant="body-default-s">{projectLink.label}</Text>
+                                </SmartLink>
+                            ))}
                         </Flex>
                     </Column>
                 )}

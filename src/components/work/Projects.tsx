@@ -10,7 +10,18 @@ export function Projects({ range }: ProjectsProps) {
   let allProjects = getPosts(["src", "app", "work", "projects"]);
 
   const sortedProjects = allProjects.sort((a, b) => {
-    return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
+    if (a.metadata.featured !== b.metadata.featured) {
+      return a.metadata.featured ? -1 : 1;
+    }
+
+    const aDate = Date.parse(a.metadata.publishedAt || "");
+    const bDate = Date.parse(b.metadata.publishedAt || "");
+
+    if (!Number.isNaN(aDate) && !Number.isNaN(bDate)) {
+      return bDate - aDate;
+    }
+
+    return a.slug.localeCompare(b.slug);
   });
 
   const displayedProjects = range
@@ -31,6 +42,9 @@ export function Projects({ range }: ProjectsProps) {
           avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
           link={post.metadata.link || ""}
           videos={post.metadata.videos}
+          featured={post.metadata.featured}
+          status={post.metadata.status}
+          links={post.metadata.links}
         />
       ))}
     </Column>
